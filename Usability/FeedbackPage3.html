@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<!-- This is a comment tag -->
+		<meta charset="UTF-8" />
+		<title>Feedback Page</title>
+		<link rel="stylesheet" href="generic.css" type="text/css"/>
+		<script src="jquery-2.2.0.min.js"></script>
+		<script src="experiment.js"></script>
+		<script>
+		
+			getResults();
+			
+			$(document).ready(function() {
+			
+				// Listen for the submit button to be clicked
+				$("#theSubmit").click(function(e) {
+					// Stop the submit button from submitting
+					e.preventDefault();
+					
+					//Check the form has been filled in
+					if (!$("input[name='satTime']:checked").val()) 
+					{
+						alert("You need to click on one of the options for the first question!");
+					}
+					else if (!$("input[name='satLike']:checked").val())
+					{
+					 	alert("You need to click on one of the options from the second question!");
+					}
+					else
+					{
+						// form is filled in - now submit
+						callNextPage("summaryPage3.html", 
+							"exp1-satTime:" + $("input[name='satTime']:checked").val(), 
+							"exp1-satLike:" + $("input[name='satLike']:checked").val());
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1 class="header">Feedback Page</h1>
+		</header>
+		<div id="mainBody">
+			<h1>Your feedback is now required:</h1>
+			<form class="para">
+			<h2>How long do you feel it took you to find the navigation button?</h2>
+			  Too Long<input type="radio" class="radio" name="satTime" value="1" />
+			| Quite Long<input type="radio"class="radio" name="satTime" value="2" />
+			| Average<input type="radio" class="radio"name="satTime" value="3" />
+			| Quite Quick<input type="radio"class="radio" name="satTime" value="4" />
+			| Very Quick<input type="radio" class="radio"name="satTime" value="5" />
+			<hr />
+			<h2>How would you rate the navigation system? </h2>
+			  Very hard to use<input type="radio"class="radio" name="satLike" value="1" />
+			| Hard to use<input type="radio"class="radio" name="satLike" value="2" />
+			| Ok to use<input type="radio"class="radio" name="satLike" value="3" />
+			| Easy to use<input type="radio"class="radio" name="satLike" value="4" />
+			| Very easy to use<input type="radio"class="radio" name="satLike" value="5" />
+            <hr/>
+			<input type="reset" class="navButton"/><input class="navButton" id="theSubmit" type="submit" value="Submit" />
+			</form>
+		</div>
+		<footer>
+		</footer>
+	</body>
+</html>

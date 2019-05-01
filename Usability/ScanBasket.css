@@ -1,0 +1,197 @@
+
+* {
+padding: 0;
+margin: 0;
+}
+.leftcol {
+float:left;
+
+}
+.rightcol {
+float:right;
+}
+.header {
+display:inline-block;
+float:left;
+height:99px;
+}
+.basket {
+min-height:99px;
+min-width: 276px;
+float:left;
+list-style-type: underline;
+
+}
+.basket img {
+display:inline-block;
+
+}
+body {
+	font-family: Arial, Verdana, sans-serif;
+	font-style: normal;
+	font-size: 100%;
+	background-color: white;
+}
+
+.Products {
+	margin-bottom:10px; 
+	margin-left:40px;
+	padding: 10px 10px;
+	min-width:1170px;
+	min-height:130px;
+	border: 1px solid grey;
+	float:left;
+	list-style-type:none;
+	display: inline-block;
+}
+.products img{
+	float:left;
+}
+.products p{
+	padding-left: 15px;
+	display:inline-block;
+	padding-right: 15px;
+	font-size: 12pt;
+	padding-top: 10px;
+}
+.products a {
+float: right;
+}
+.quantity {
+float:right;
+font-size:12pt;
+}
+
+.navBar li
+{
+	display:inline-block;
+    list-style-type: none;
+    color: black;
+	padding: 8px 17px;
+	font-size: 16pt;
+	background-color: white;
+	border-bottom: 1px solid #999999;
+	border-right: 2px solid #999999;
+	float:left;
+	
+}
+
+.navBar ul
+{
+    display: none;
+    position: absolute;
+}
+.navBar li:hover > ul
+{
+    display: block;
+}
+.navBar ul.parent_hover
+{
+    display: block;
+}
+.navBar a
+{
+    color: black;
+    background: none;
+    width: 100%;
+    text-decoration: none;
+}
+.navBar li:hover
+{
+    color: white;
+	background-color: 1766a6;
+}
+.navbar
+{
+	position: relative;
+    width: 100%;
+    color: black;
+    background-color: white;
+}
+
+.box {
+float:right;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: white;
+  background:#1766ff;
+  border: 2px solid black;
+  border-radius: 20px/50px;
+  text-decoration: none;
+}
+.button2 {
+  font-size: 1em;
+  padding: 10px;
+  color: white;
+  background:#1766ff;
+  border: 2px solid black;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  list-style-type:none;
+  cursor:pointer;
+  
+}
+.button a{
+font-color:black;
+}
+
+
+.button:hover {
+  background: #1766a6 ;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  max-width: 600px;
+  min-width:600px;
+  max-height: 250px;
+  min-height: 250px;
+  transition: all 5s ease-in-out;
+  list-style-type:none;
+  overflow:hidden;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: red;
+}
+.popup .content {
+  font-size:32pt;
+}

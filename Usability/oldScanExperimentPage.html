@@ -1,0 +1,70 @@
+
+<html>
+<meta charset="UTF-8" />
+<head>
+<title> Scan.co.uk Interaction </title> 
+<link rel="stylesheet" href="oldscan.css" type="text/css">
+<script src="jquery-2.2.0.min.js"></script>
+		<script src="experiment.js"></script>
+		<script>
+			function Dialog() {
+			alert("Error - Wrong Button pressed");
+}		
+			getResults();
+			var errors = 0;
+			var loadDate;
+			$(document).ready(function() {
+				// Get the load time
+				loadDate = new Date();
+				
+				$("*").click(function(e) {
+					// Stop the function propagating up the DOM tree
+					e.stopPropagation();
+					
+					// Get the interaction time
+					var intDate = new Date();
+					
+					// Check if this is the link we want
+					if ($(this).data("islink") != undefined)
+					{
+						// The right link has been clicked
+						var iTime = intDate.getTime() - loadDate.getTime() - benchmarkDate();
+						
+						// Load the next page with the data we want to send
+						callNextPage("feedbackPage.html", "exp1-errors:" + errors, "exp1-iTime:" + iTime);
+					}
+					else
+					{
+						// An incorrect part of the page has been clicked
+						errors++;
+					}
+				});
+			});
+		</script>
+</head>
+<body>
+<img class= "leftcol" src="M:\usability\leftimage.jpg"/>
+<img class="header" src="M:\usability\scanheader.jpg"/> 
+<img class="rightcol" src="M:\usability\rightimage.jpg"/>
+<ul class="navBar"><!-- apologise for the bad formatting but its the only way to take away the line break the browser reads -->
+			<li class ="cmph"> Computer Hardware </li><li class="1nav"> Pro Audio </li><li class="1nav" > Pro Gaming</li><li class="1nav"> Pro Video </li><li class="1nav"> Pro Graphics/AI </li><li class="1nav"> Digital Signage </li><li class="1nav"> 3XS Systems </li><li class="1nav"> Today Only </li>
+			
+
+</ul>
+<div class="navBar2"> <!-- apologise for the bad formatting but its the only way to take away the line break the browser reads -->
+			<div class="drop">
+			<input id="tab1" type="radio">
+			<label for="tab1"> PC's Laptops</label><li class ="cmp"> Components</li><li class ="cmp"> Storage</li><li class ="cmp"> Peripherals</li><li class ="cmp"> Display</li><li class ="cmp"> Audio</li><li class ="cmp"> Software</li><li class ="cmp"> Mobile Devices</li><li class ="cmp"> Smart/Gadgets</li>
+			<div class="tab-content">
+				<li data-islink="link">Gaming Laptops </li>
+				<li> Gaming Desktops</li>
+				<li> Home/Office Laptops</li>
+				<li> Home/Office Desktops</li>
+			</div>
+			</div>
+			
+						
+</div>
+		<img src="M:\usability\scanbody.jpg"/> 		
+	</body>
+</html>

@@ -1,0 +1,113 @@
+
+<html>
+<meta charset="UTF-8" />
+<head>
+<title> Scan.co.uk Interaction </title> 
+<link rel="stylesheet" href="scan.css" type="text/css">
+<script src="jquery-2.2.0.min.js"></script>
+		<script src="experiment.js"></script>
+		<script>
+			function Dialog() {
+			alert("Error - Wrong Button pressed");
+}		
+			getResults();
+			var errors = 0;
+			var loadDate;
+			$(document).ready(function() {
+				// Get the load time
+				loadDate = new Date();
+				
+				$("*").click(function(e) {
+					// Stop the function propagating up the DOM tree
+					e.stopPropagation();
+					
+					// Get the interaction time
+					var intDate = new Date();
+					
+					// Check if this is the link we want
+					if ($(this).data("islink") != undefined)
+					{
+						// The right link has been clicked
+						var iTime = intDate.getTime() - loadDate.getTime() - benchmarkDate();
+						
+						// Load the next page with the data we want to send
+						callNextPage("FeedbackPage3.html", "exp1-errors:" + errors, "exp1-iTime:" + iTime);
+					}
+					else
+					{
+						// An incorrect part of the page has been clicked
+						errors++;
+					}
+				});
+			});
+		</script>
+</head>
+<body>
+<img class= "leftcol" src="M:\usability\leftimage.jpg"/>
+<img class="header" src="M:\usability\scanheader.jpg"/> 
+<img class="rightcol" src="M:\usability\rightimage.jpg"/>
+<ul class="navBar">
+			<li>Computer Hardware<ul>	
+						<li> Audio </li>
+						<li>Components<ul>
+							<li> Cases </li>
+							<li> Cooling	</li>
+							<li> CPU	</li>
+							<li> GPU</li>
+						</ul></li>
+						<li> Display </li>
+						<li> Mobile Devices	</li>
+						<li> PC/Laptops <ul>
+							<li> Desktop - Gaming</li>
+							<li> Desktop - Home/Office</li>
+							<li data-islink="link">Laptops - Gaming </li>
+							</ul></li>	
+						<li> Peripherals </li>	
+						<li> Smart/Gadgets	</li>				
+						<li> Software </li>
+						<li> Storage <ul>
+							<li> Backup </li>
+							<li> Blank CD/DVDs </li>
+							<li> Hard Drives </li>
+							<li> USB Pen-drives </li>
+						</ul></li>
+						</ul></li>
+			<li> Pro Audio <ul> 
+						<li> DJ Equipment </li>
+						<li> Music Equipment </li>
+						<li> Software </li>
+						<li> Training </li>
+						</ul></li>
+			<li> Pro Gaming <ul>
+					<li> Capture Cards </li>
+					<li> Cases </li>
+					<li> Cooling </li>
+					<li> Monitors </li>
+					<li> Motherboards </li>
+					</ul></li>
+			<li> Pro video <ul>
+					<li> Audio </li>
+					<li> Cameras </li>
+					<li> Display </li>
+					<li> Editing </li>
+					<li> Lenses </li>
+					<li> Power </li>
+					<li> Tripods/Support </li>
+					</ul></li>
+			<li> Pro Graphics <ul>					
+					<li> AMD Graphics</li>
+					<li> NIVIDIA Graphics </li>
+					<li> Software </li>
+					<li> Tablets/Mice</li>
+					</ul></li>
+			<li> Digital Signage <ul>
+					</ul></li>
+			<li> 3XS Systems <ul>
+					</ul></li>
+			<li> Today Only <ul>
+					</ul></li>
+		</ul>		
+			<br> </br>
+		<img src="M:\usability\scanbody.jpg"/> 
+	</body>
+</html>

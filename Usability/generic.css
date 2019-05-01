@@ -1,0 +1,62 @@
+* {
+	text-align: center;
+	padding: 5px;
+}
+body {
+	font-family: Arial, Verdana, sans-serif;
+	font-style: normal;
+	font-size: 100%;
+    background: linear-gradient(to bottom right,white, grey);
+	
+}
+.header {
+	border: 6px solid #1766a6;
+    border-radius: 5px;
+	background-color: white;
+}
+.para {
+	border: 2px solid #1766a9;
+    border-radius: 5px;
+	background-color: white;
+}
+
+.radio {
+	border-left:3px solid grey;
+}
+
+.warnings{
+	color: red;	
+	border: 2px solid black;
+	padding:6px;
+	background-color: white;
+}
+
+.navButton {
+	padding: 5px;
+	background-color: #1766a9;
+	color: white;
+	font-size: 24pt;
+}
+
+#mainBody {
+	background-color:white;
+	font-size: 14pt;
+}	
+.warnsum {
+	color: red; 
+
+}
+.next {
+	text-align:center;
+	border: 2px solid #1766a9;
+    border-radius: 5px;
+	background-color: white;
+	color:white;
+}
+.nextbutton a{
+	padding: 5px;
+	background-color: #1766a9;
+	font-size: 24pt;
+	list-style-type: none;
+	color:white;
+}

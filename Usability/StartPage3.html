@@ -1,0 +1,35 @@
+<html>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="generic.css" type="text/css">
+<head>
+	<title> Scan.co.uk User Experiment </title> 
+	<script src="jquery-2.2.0.min.js"></script>
+		<script src="experiment.js"></script>
+		<script>
+		
+			$(document).ready(function() {
+				$("#clickMe").click(function() {
+					callNextPage("ScanExperimentPage.html");
+				});
+			});
+			
+		</script>
+</head>
+	<body>
+		<div class="header">
+			<h1> Group 26- User Experiment - Task 3 </h1>
+		</div>
+		<br></br>
+		<div class="para">
+			<h2>This is a simple experiment which aims to discover which method of navigation is faster than the other<h2>
+			<h2> The Main Instructions within the first part of the experiment are:</h2> 
+			<h2> - Use the main local navigation bar to find and click on "Gaming-Laptops"</h2>
+		<div class="warnings">	
+			<h1>DO NOT CLOSE THE BROWSER APPLICATION AT ANY TIME </h1> 
+			<h1> & </h1>
+			<h1>DO NOT USE THE BACK BUTTON WITHIN THE BROWSER AT ANY TIME </h1>
+		</div>
+			<h2> The experiment will end when you have completed 4 tasks </h2> 
+			<button class="navButton" id="clickMe">Click here to start the experiment</button>
+		</div>
+	</body>

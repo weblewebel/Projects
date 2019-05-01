@@ -1,0 +1,110 @@
+
+* {
+padding: 0;
+margin: 0;
+}
+
+body {
+	font-family: Arial, Verdana, sans-serif;
+	font-style: normal;
+	font-size: 100%;
+	background-color: white;
+}
+.leftcol {
+float:left;
+
+}
+.rightcol {
+float:right;
+}
+.header {
+display:inline-block;
+
+}
+
+.navBar li
+{
+	display:inline-block;
+	Padding: 10px 29.5px;
+	font-size: 12.5pt;
+	border-right: 1px solid #9fa2a5;
+	
+}
+.navBar li:hover {
+	background-color:9fa2a5;
+	color:white;
+
+}
+label {
+	background-color:1766a6;
+	color:white;
+	display:inline-block;
+	Padding: 12px 32.5px;
+	font-size: 12pt;
+	cursor:pointer;
+}
+.cmp {
+		background-color:1766a6;
+	color:white;
+	display:inline-block;
+	Padding: 12px 32.5px;
+	font-size: 12pt;
+	cursor:pointer;
+}
+#tab1{
+	float:left;
+}
+.cmph {
+	background-color:1766a6;
+	color:white;
+}
+/*accordion */
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -20;
+}
+.drop{
+transition:0;
+}
+
+/* :checked */
+input:checked~ .tab-content {
+  max-height: 10em;
+  transition: 0s;
+}
+.tab-content {
+  max-height: 0;
+  overflow: hidden;
+  background: white;
+  list-style-type:none;
+  -webkit-transition: max-height .35s;
+  -o-transition: max-height .35s;
+  transition: max-height .35s;
+}
+
+.tab-content li{
+	display:inline-block;
+	color: grey;
+	Padding: 12px 32.5px;
+	font-size: 12pt; 
+	cursor:pointer;
+}
+.tab-content li:hover {
+	color: white;
+	background-color: grey;
+	transition:0;
+}
+/* Icon */
+label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  transition: all 35s;
+}

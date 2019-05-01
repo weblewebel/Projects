@@ -1,0 +1,166 @@
+
+<html>
+<meta charset="UTF-8" />
+<head>
+<title> Scan.co.uk Interaction </title> 
+<link rel="stylesheet" href="ScanBasket.css" type="text/css">
+<script src="jquery-2.2.0.min.js"></script>
+		<script src="experiment.js"></script>
+		<script>
+			function Dialog() {
+			alert("Error - Wrong Button pressed");
+}		
+			getResults();
+			var errors = 0;
+			var loadDate;
+			$(document).ready(function() {
+				// Get the load time
+				loadDate = new Date();
+				
+				$("*").click(function(e) {
+					// Stop the function propagating up the DOM tree
+					e.stopPropagation();
+					
+					// Get the interaction time
+					var intDate = new Date();
+					
+					// Check if this is the link we want
+					if ($(this).data("islink") != undefined)
+					{
+						// The right link has been clicked
+						var iTime = intDate.getTime() - loadDate.getTime() - benchmarkDate();
+						
+						// Load the next page with the data we want to send
+						callNextPage("Feedbackpage4.html", "exp1-errors:" + errors, "exp1-iTime:" + iTime);
+					}
+					else
+					{
+						// An incorrect part of the page has been clicked
+						errors++;
+					}
+				});
+			});
+		</script>
+</head>
+<body>
+<img class= "leftcol" src="M:\usability\leftimage.jpg"/>
+<img class="header" src="M:\usability\scanheader.jpg"/>
+</div>
+<img class="rightcol" src="M:\usability\rightimage.jpg"/>
+<ul class="navBar">
+			<li>Computer Hardware<ul>
+						<li> PC/Laptops <ul>
+							<li> Desktop Gaming</li>
+							<li> Desktop Home/Office</li>
+							<li> Laptops - Home/Office </li>
+							<li> Gaming - Laptops</li>
+						</ul></li>
+						<li>Components<ul>
+							<li> Cases </li>
+							<li> Cooling	</li>
+							<li> CPU	</li>
+							<li> GPU</li>
+						</ul></li>
+						<li> Storage <ul>
+							<li> Backup </li>
+							<li> Blank CD/DVDs </li>
+							<li> Hard Drives </li>
+							<li> USB Pen-drives </li>
+						</ul></li>
+						<li> Peripherals </li>
+						<li> Display </li>
+						<li> Audio </li>
+						<li> Software </li>
+						<li> Mobile Devices	</li>
+						<li> Smart/Gadgets	</li>
+						</ul></li>
+			<li> Pro Audio <ul> 
+						<li> Music Equipment </li>
+						<li> DJ Equipment </li>
+						<li> Software </li>
+						<li> Training </li>
+						</ul></li>
+			<li> Pro Gaming <ul>
+					<li> Capture Cards </li>
+					<li> Motherboards </li>
+					<li> Gaming Laptops </li>
+					<li> Cases </li>
+					<li> Cooling </li>
+					<li> Monitors </li>
+					<li> Gaming PC's</li>
+					</ul></li>
+			<li> Pro video <ul>
+					<li> Audio </li>
+					<li> Cameras </li>
+					<li> Power </li>
+					<li> Display </li>
+					<li> Editing </li>
+					<li> Tripods/Support </li>
+					<li> Lenses </li>
+					</ul></li>
+			<li> Pro Graphics <ul>
+					<li> Software </li>
+					<li> NIVIDIA Graphics </li>
+					<li> AMD Graphics</li>
+					<li> Tablets/Mice</li>
+					</ul></li>
+			<li> Digital Signage <ul>
+					</ul></li>
+			<li> 3XS Systems <ul>
+					</ul></li>
+			<li> Today Only <ul>
+					</ul></li>
+		</ul>		
+		<img src="M:\usability\basketimage.jpg"/> 
+		<div class="Products">
+		   <li><img src="m:\usability\redlaptop.jpg"/></li> <li> <p>  Red Laptop </p></li>
+		   <br></br>
+		   <li> <p> CPU: 2.4GHz Intel Core i7-6700HQ | Graphics: Nvidia GeForce GTX 1060 (8GB GDDR5 VRAM)</li>
+		   <div class="box">
+           <li> <a class="button" href="#popup1">Add to Basket</a> </li>
+           
+		   <br></br>
+		   <li> <a class="button" href="#popup2">Remove to Basket</a></li>
+		</div>
+		</div>
+				<div class="Products">
+		   <li><img src="m:\usability\blacklaptop.jpg"/></li> <li> <p>  Asus G750JX-DB71</p></li>
+		   <br></br>
+		   <li> <p> CPU: 3GHz Intel Core i7-6700HQ | Graphics: Nvidia GeForce GTX 1060 (6GB GDDR5 VRAM)</p> </li>
+           <div class="box">
+		   <li> <a class="button" href="#popup1">Add to Basket</a>  </li>
+           
+		   <br></br>
+		   <li> <a class="button" href="#popup2">Remove to Basket</a> </li>		
+		</div></div>
+				<div class="Products">
+		   <li><img src="m:\usability\silverlaptop.jpg"/></li> <li> <p>  RazorBlade</p></li>
+		   <br></br>
+		   <li> <p> CPU: 2.6GHz Intel Core i7-6700HQ | Graphics: Nvidia GeForce GTX 1060 (6GB GDDR5 VRAM)</p></li>
+		   <div class="box">
+           <li> <a class="button" href="#popup1">Add to Basket</a> </li>
+           
+		   <br></br>
+		   <li> <a class="button" href="#popup2">Remove to Basket</a> </li>		
+		</div></div>
+    <div id="popup1" class="overlay">
+		<div class="popup">
+			<h2>Basket notification</h2>
+			<a class="close" href="#">X</a>
+			<div class="content">
+			Item is added to the basket
+			</div>
+        </div>
+    </div>
+    <div id="popup2" class="overlay">
+		<div class="popup">
+			<h2>Basket notification</h2>
+			<a class="close" href="#">X</a>
+			<div class="content">
+				Item is removed from the basket
+            <br></br>
+            <li><a class="button2" data-islink="link"> Proceed to Feedback page </a></li>
+			</div>
+
+	</body>
+</html>
